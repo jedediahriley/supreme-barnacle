@@ -5,7 +5,7 @@ use Mojo::Base 'Mojolicious::Controller', -signatures;
 sub welcome ($self) {
 
   # Render template "example/welcome.html.ep" with message
-  $self->render(template => 'myTemplates/main', msg => 'Welcome to the Mojolicious real-time web framework!');
+  $self->render( template => 'myTemplates/main', msg => 'Welcome to the Mojolicious real-time web framework!');
 }
 
 1;

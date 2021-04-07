@@ -14,12 +14,12 @@ sub startup ($self) {
   my $r = $self->routes;
 
   # Normal route to controller
-  $r->get('/')->to('ControllerOne#welcome');
-  $r->get('/')->to('CustomController#displayLogin');
-  $r->post('/login')->to('CustomController#validUser');
-  $r->any('/logout')->to('CustomController#logout');
+  
+  $r->get('/')->to('ControllerOne#displayLogin');
+  $r->post('/login')->to('ControllerOne#validUser');
+  $r->any('/logout')->to('ControllerOne#logout');
 
-  my $authorized = $r->under('/')->to('CustomController#alreadyLoggedIn');
+  my $authorized = $r->under('/')->to('ControllerOne#alreadyLoggedIn');
 }
 
 1;

@@ -2,9 +2,9 @@
 % title 'Login Page';
 
 <Center>
-<h1>Login to make an entry!</h1>
 
-#login error message
+
+<!-- login error message -->
 <center>
 
 <h6>
@@ -16,7 +16,7 @@
 </font>
 </h6>
 
-<form action="/login" method="post">
+<form action="/login" method="POST">
 
     <b>UserName</b> <input type="text" name="username" required></br>
     <b>Password</b> <input type="password" name="pass" required></br>

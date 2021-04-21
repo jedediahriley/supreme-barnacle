@@ -12,18 +12,23 @@
         <h1 class="mb-4">Blog Articles</h1>
         <a href="/articles/new" class="btn btn-success">New Article</a>
 
-        <% articles.forEach(article => { %>
+        <% for ( i in articles) { %>
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 class=card-title"><%= article.title %></h4>
+                    <h4 class=card-title"><%= articles[i].title %></h4>
                     <div class="card subtitle text-muted mb-2">
-                        <%= article.createdAt.toLocaleDateString() %>
+                        <%= articles[i].createdAt.toLocaleDateString() %>
                     </div>
-                    <div class="card-text mb-2"><%= article.description %></div>
+                    <div class="card-text mb-2"><%= articles[i].description %></div>
+                    <a href="articles/<%= articles[i].slug %>" class="btn btn-primary"> Read More</a>
+                    <form action="/articles/<%= articles[i].id %>" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>    
+                    </form>
                 </div>
                 
             </div>
-        <% }) %>
+        <% } %>
+        
     </div>
 </body>
 </html>
